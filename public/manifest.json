@@ -1,0 +1,21 @@
+{
+  "name": "instablam Photo Editor",
+  "short_name": "instablam",
+  "description": "Photo editing application",
+  "start_url": "/",
+  "background_color": "#fef6e8",
+  "theme_color": "#660200",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./icons/logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
