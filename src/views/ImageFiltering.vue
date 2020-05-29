@@ -59,68 +59,56 @@ export default {
     uppdateBrightness: function() {
       let val = this.$store.state.brightness;
       this.Caman("#img", this.imageURL, function() {
-        if (val == 0) {
-          this.revert();
-        } else {
-          this.brightness(val);
-          this.render();
-        }
+        this.brightness(val);
+        this.render();
       });
       this.brightness = val;
     },
     uppdateSaturation: function() {
       let val = this.$store.state.saturation;
       this.Caman("#img", this.imageURL, function() {
-        if (val == 0) {
-          this.revert();
-        } else {
-          this.saturation(val);
-          this.render();
-        }
+        this.saturation(val);
+        this.render();
       });
       this.saturation = val;
     },
     uppdateContrast: function() {
       let val = this.$store.state.contrast;
       this.Caman("#img", this.imageURL, function() {
-        if (val == 0) {
-          this.revert();
-        } else {
-          this.contrast(val);
-          this.render();
-        }
+        this.contrast(val);
+        this.render();
       });
       this.contrast = val;
     },
     uppdateVibrance: function() {
       let val = this.$store.state.vibrance;
       this.Caman("#img", this.imageURL, function() {
-        if (val == 0) {
-          this.revert();
-        } else {
-          this.vibrance(val);
-          this.render();
-        }
+        this.vibrance(val);
+        this.render();
       });
       this.vibrance = val;
     },
     uppdateHue: function() {
       let val = this.$store.state.hue;
       this.Caman("#img", this.imageURL, function() {
-        if (val == 0) {
-          this.revert();
-        } else {
-          this.hue(val);
-          this.render();
-        }
+        this.hue(val);
+        this.render();
       });
       this.hue = val;
     },
     download: function(e) {
+      console.log(e);
       this.Caman("#img", function() {
-        e.target.href = this.toBase64();
+        let a = document.createElement("a");
+        a.href = this.toBase64();
+        a.download = Date() + "_image.png";
+        a.click();
       });
-      e.target.download = "image.jpg";
+
+      new Notification("instablam", {
+        body: "your image has been downloaded",
+        icon: "../assets/notification_icon.png"
+      });
     }
   }
 };
