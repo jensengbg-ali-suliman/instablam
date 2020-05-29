@@ -17,6 +17,9 @@ export default {
     Header,
     VideoStream
   },
+  mounted() {
+    Notification.requestPermission();
+  },
   methods: {
     takePicture: function() {
       this.$router.push("/image");
